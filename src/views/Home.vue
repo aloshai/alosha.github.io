@@ -5,21 +5,13 @@
       <h3 class="d-none uppercase" id="dev"></h3>
     </div>
 
-    <div
-      id="who-div"
-      onclick="github()"
-      class="d-none border-dotted-block quaternary"
-    >
+    <div id="who-div" class="d-none border-dotted-block quaternary">
       <h2 id="who-title" class="tertiary">Who I am?</h2>
       <p id="who"></p>
     </div>
-    <div
-      id="hire-me-div"
-      onclick="github()"
-      class="d-none border-dotted-block quaternary"
-    >
-      <h2 id="hire-title" class="tertiary">Hire me?</h2>
-      <p id="hire"></p>
+    <div id="contact-me-div" class="d-none border-dotted-block quaternary">
+      <h2 id="contact-title" class="tertiary">Do you want to contact?</h2>
+      <p id="contact"></p>
     </div>
   </div>
 </template>
@@ -58,11 +50,11 @@ export default {
       'Hi there! I am <span class="green">Mert Yılmaz</span>. I am <span class="green">17</span> years old and I am an high school student. I am still learning new stuff in programming. I am an <span class="green">.NET</span>, <span class="green">JavaScript</span>, <span class="green">TypeScript</span>, and <span class="green">Vue</span> developer. Beside them, I am also interested in <span class="green">DevOps</span>.',
       25
     );
-    document.getElementById("hire-me-div").style.display = "block";
-    await this.typeWriter("hire-title", "Hire Me?");
+    document.getElementById("contact-me-div").style.display = "block";
+    await this.typeWriter("contact-title", "Do you want to contact?");
     await this.typeWriter(
-      "hire",
-      'If you want to give me a job, you can reach me at my <span class="green">e-mail address</span> or on my <span class="green">Discord account</span>.',
+      "contact",
+      'You can find on me my <span class="green">e-mail</span> address or on my <span class="green">Discord account</span>.',
       25
     );
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="skills">
-    <h1>{{ test }}</h1>
+    <h1>This place is empty now :)</h1>
   </div>
 </template>
 
