@@ -1,32 +1,188 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" style="height: 100%">
+    <div id="point-cursor" class="cursor"></div>
+
+    <div class="container">
+      <div class="header text-center">
+        <div id="home">
+          <router-link to="/" style="text-decoration: none; color: inherit;">Home</router-link>
+        </div>
+        <div id="projects">
+          <router-link to="/projects" style="text-decoration: none; color: inherit;">Projects</router-link>
+        </div>
+        <div id="skills">
+          <router-link to="/skills" style="text-decoration: none; color: inherit;">Skills</router-link>
+        </div>
+      </div>
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    let pointCursor = document.getElementById("point-cursor");
+    window.addEventListener("mousemove", (ev) => {
+      let x = ev.clientX;
+      let y = ev.clientY;
+
+      pointCursor.style.top = `${y}px`;
+      pointCursor.style.left = `${x}px`;
+    });
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+$primary: #000000;
+$secondary: #52057b;
+$tertiary: #892cdc;
+$quaternary: #bc6ff1;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&display=swap");
+
+* {
+  font-family: "Roboto Mono", monospace;
+  cursor: none;
 }
 
-#nav {
-  padding: 30px;
+::selection {
+  background-color: $quaternary;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  color: $tertiary;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
+::-webkit-scrollbar {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: $primary;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  height: auto;
+  min-height: 100%;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  div, div router-link {
+    padding: 5px 15px 5px 15px;
+    color: whitesmoke;
+    height: auto;
+
+    transition: background-color 100ms ease-in-out;
+    background-color: $tertiary;
+
+    &:hover {
+      background-color: $quaternary;
+      color: $tertiary;
     }
   }
+}
+
+.cursor {
+  position: absolute;
+  pointer-events: none;
+  visibility: visible;
+  transition: all 50ms ease-in-out;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0.4;
+  box-shadow: 0 0 15px $tertiary;
+  width: 25px;
+  height: 25px;
+  z-index: 1000;
+  background-color: $quaternary;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.primary {
+  color: $primary !important;
+}
+
+.secondary {
+  color: $secondary !important;
+}
+
+.tertiary {
+  color: $tertiary !important;
+}
+
+.quaternary {
+  color: $quaternary !important;
+}
+
+.green {
+  color: rgb(156, 248, 156) !important;
+}
+
+.border-dotted-block {
+  margin: 5px;
+  padding: 10px;
+  border: 2px $secondary dotted;
+  height: auto;
+  width: auto;
+
+  transition: all 100ms ease-in-out;
+
+  &:hover {
+    background-color: $secondary;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.tags {
+  display: flex;
+  color: whitesmoke;
+}
+
+.tag {
+  padding: 10px;
+  margin: 5px;
+  border: 1px #b7ffb0 dashed;
+  width: max-content;
 }
 </style>
