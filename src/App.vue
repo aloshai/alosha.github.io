@@ -34,6 +34,7 @@
       style="
         position: absolute;
         bottom: 0;
+        width: max-content;
         left: 50%;
         transform: translate(-50%, -50%);
         color: #52057b;
