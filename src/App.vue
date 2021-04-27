@@ -174,6 +174,7 @@ html {
 .tag {
   padding: 10px;
   margin: 5px;
+  color: whitesmoke;
   border: 1px #b7ffb0 dashed;
   width: max-content;
 }

@@ -1,15 +1,15 @@
 <template>
   <div class="home">
-    <div class="text-center">
+    <div class="text-center mb-4">
       <h1 id="welcome"></h1>
       <h3 class="uppercase" id="dev"></h3>
     </div>
 
-    <div id="who-div" class="d-none border-dotted-block quaternary">
+    <div id="who-div" class="d-none m-2 border-dotted-block quaternary">
       <h2 id="who-title" class="tertiary">Who I am?</h2>
       <p id="who"></p>
     </div>
-    <div id="contact-me-div" class="d-none border-dotted-block quaternary">
+    <div id="contact-me-div" class="d-none m-2 border-dotted-block quaternary">
       <h2 id="contact-title" class="tertiary">Do you want to contact?</h2>
       <p id="contact"></p>
     </div>
