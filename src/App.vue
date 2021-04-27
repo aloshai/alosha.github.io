@@ -1,17 +1,29 @@
 <template>
-  <div id="app" style="height: 100%">
+  <div id="app" class="vertical-center" style="height: 100%">
     <div id="point-cursor" class="cursor"></div>
 
-    <div class="container">
-      <div class="header text-center">
+    <div
+      class="jumbotron d-flex justify-content-center align-items-center flex-column min-vh-100 p-4"
+    >
+      <div class="header text-center mb-4">
         <div id="home">
-          <router-link to="/" style="text-decoration: none; color: inherit;">Home</router-link>
+          <router-link to="/" style="text-decoration: none; color: inherit"
+            >Home</router-link
+          >
         </div>
         <div id="projects">
-          <router-link to="/projects" style="text-decoration: none; color: inherit;">Projects</router-link>
+          <router-link
+            to="/projects"
+            style="text-decoration: none; color: inherit"
+            >Projects</router-link
+          >
         </div>
         <div id="skills">
-          <router-link to="/skills" style="text-decoration: none; color: inherit;">Skills</router-link>
+          <router-link
+            to="/skills"
+            style="text-decoration: none; color: inherit"
+            >Skills</router-link
+          >
         </div>
       </div>
       <router-view />
@@ -78,23 +90,13 @@ html {
   background-color: $primary;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  padding: 20px;
-  height: auto;
-  min-height: 100%;
-}
-
 .header {
   display: flex;
   width: 100%;
   justify-content: center;
 
-  div, div router-link {
+  div,
+  div router-link {
     padding: 5px 15px 5px 15px;
     color: whitesmoke;
     height: auto;
@@ -157,26 +159,16 @@ html {
 }
 
 .border-dotted-block {
-  margin: 5px;
   padding: 10px;
   border: 2px $secondary dotted;
-  height: auto;
-  width: auto;
+
+  height: 100%;
 
   transition: all 100ms ease-in-out;
 
   &:hover {
     background-color: $secondary;
   }
-}
-
-.d-none {
-  display: none;
-}
-
-.tags {
-  display: flex;
-  color: whitesmoke;
 }
 
 .tag {

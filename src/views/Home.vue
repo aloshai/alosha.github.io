@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <div class="text-center">
-      <h1 class="d-none" id="welcome"></h1>
-      <h3 class="d-none uppercase" id="dev"></h3>
+      <h1 id="welcome"></h1>
+      <h3 class="uppercase" id="dev"></h3>
     </div>
 
     <div id="who-div" class="d-none border-dotted-block quaternary">
@@ -43,14 +43,14 @@ export default {
       25
     );
 
-    document.getElementById("who-div").style.display = "block";
+    document.getElementById("who-div").style.setProperty("display", "block", "important");
     await this.typeWriter("who-title", "Who I am?", 50);
     await this.typeWriter(
       "who",
       'Hi there! I am <span class="green">Mert Yılmaz</span>. I am <span class="green">17</span> years old and I am an high school student. I am still learning new stuff in programming. I am an <span class="green">.NET</span>, <span class="green">JavaScript</span>, <span class="green">TypeScript</span>, and <span class="green">Vue</span> developer. Beside them, I am also interested in <span class="green">DevOps</span>.',
       25
     );
-    document.getElementById("contact-me-div").style.display = "block";
+    document.getElementById("contact-me-div").style.setProperty("display", "block", "important");
     await this.typeWriter("contact-title", "Do you want to contact?");
     await this.typeWriter(
       "contact",

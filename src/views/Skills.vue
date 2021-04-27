@@ -8,9 +8,9 @@
 export default {
   name: "Skills",
   data() {
-      return {
-          test: "asd"
-      }
-  }
+    return {
+      test: "asd",
+    };
+  },
 };
 </script>
