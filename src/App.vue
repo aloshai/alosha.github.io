@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="vertical-center" style="height: 100%">
+  <div id="app" class="min-vh-100">
     <div id="point-cursor" class="cursor"></div>
 
     <div
@@ -28,11 +28,33 @@
       </div>
       <router-view />
     </div>
+
+    <div
+      id="author"
+      style="
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #52057b;
+      "
+    ></div>
   </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    typeWriter: async function (id, txt, speed = 50) {
+      document.getElementById(id).style.display = "block";
+      for (let i = 0; i < txt.length; i++) {
+        document.getElementById(id).innerHTML = txt.substr(0, i);
+        // document.getElementById(id).innerHTML += txt.charAt(i);
+        await new Promise((resolve) => setTimeout(resolve, speed));
+      }
+      document.getElementById(id).innerHTML = txt;
+    },
+  },
   mounted() {
     let pointCursor = document.getElementById("point-cursor");
     window.addEventListener("mousemove", (ev) => {
@@ -42,6 +64,8 @@ export default {
       pointCursor.style.top = `${y}px`;
       pointCursor.style.left = `${x}px`;
     });
+
+    this.typeWriter("author", "Made with ❤ by Alosha", 125);
   },
 };
 </script>
