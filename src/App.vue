@@ -60,18 +60,9 @@
 </template>
 
 <script>
+import Typewriter from 'typewriter-effect/dist/core';
+
 export default {
-  methods: {
-    typeWriter: async function (id, txt, speed = 50) {
-      document.getElementById(id).style.display = "block";
-      for (let i = 0; i < txt.length; i++) {
-        document.getElementById(id).innerHTML = txt.substr(0, i);
-        // document.getElementById(id).innerHTML += txt.charAt(i);
-        await new Promise((resolve) => setTimeout(resolve, speed));
-      }
-      document.getElementById(id).innerHTML = txt;
-    },
-  },
   mounted() {
     let pointCursor = document.getElementById("point-cursor");
     window.addEventListener("mousemove", (ev) => {
@@ -81,8 +72,11 @@ export default {
       pointCursor.style.top = `${y}px`;
       pointCursor.style.left = `${x}px`;
     });
-
-    this.typeWriter("author", "Made with ❤ by Alosha", 50);
+    
+    new Typewriter("#author", {
+      strings: ["Made with ❤ by Alosha"],
+      autoStart: true,
+    });
   },
 };
 </script>

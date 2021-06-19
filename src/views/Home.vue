@@ -17,50 +17,69 @@
 </template>
 
 <script>
+import Typewriter from "typewriter-effect/dist/core";
+
 export default {
   name: "Home",
-  methods: {
-    typeWriter: async function (id, txt, speed = 50) {
-      document.getElementById(id).style.display = "block";
-      for (let i = 0; i < txt.length; i++) {
-        document.getElementById(id).innerHTML = txt.substr(0, i);
-        // document.getElementById(id).innerHTML += txt.charAt(i);
-        await new Promise((resolve) => setTimeout(resolve, speed));
-      }
-      document.getElementById(id).innerHTML = txt;
-    },
-  },
-
   async mounted() {
-    await this.typeWriter(
-      "welcome",
-      'Hello, I am <span class="quaternary">Alosha</span>!',
-      10
-    );
-    await this.typeWriter(
-      "dev",
-      '<span class="quaternary">FULL-STACK</span> Developer.',
-      10
-    );
+    new Typewriter("#welcome", {
+      loop: false,
+      delay: 25,
+    })
+      .typeString('Hello, I am <span class="quaternary">Alosha</span>!')
+      .callFunction(() => {
+        new Typewriter("#dev", {
+          loop: false,
+          delay: 25,
+        })
+          .typeString('<span class="quaternary">FULL-STACK</span> Developer.')
+          .callFunction(() => {
+            document
+              .getElementById("who-div")
+              .style.setProperty("display", "block", "important");
 
-    document
-      .getElementById("who-div")
-      .style.setProperty("display", "block", "important");
-    await this.typeWriter("who-title", "Who I am?", 10);
-    await this.typeWriter(
-      "who",
-      'I am <span class="green">Mert Yılmaz</span>. I am <span class="green">17</span> years old and I am a high school student. I am still learning new stuff in programming. I am an <span class="green">.NET</span>, <span class="green">JavaScript</span>, <span class="green">TypeScript</span>, and <span class="green">Vue</span> developer. Beside them, I am also interested in <span class="green">DevOps</span>.',
-      10
-    );
-    document
-      .getElementById("contact-me-div")
-      .style.setProperty("display", "block", "important");
-    await this.typeWriter("contact-title", "Do you want to contact?", 10);
-    await this.typeWriter(
-      "contact",
-      'You can find on me my <span class="green">e-mail</span> address or on my <span class="green">Discord account</span>.',
-      10
-    );
+            new Typewriter("#who-title", {
+              loop: false,
+              delay: 25,
+            })
+              .typeString("Who I am?")
+              .callFunction(() => {
+                new Typewriter("#who", {
+                  loop: false,
+                  delay: 25,
+                })
+                  .typeString(
+                    'I am <span class="green">Mert Yılmaz</span>. I am <span class="green">17</span> years old and I am a high school student. I am still learning new stuff in programming. I am an <span class="green">.NET</span>, <span class="green">JavaScript</span>, <span class="green">TypeScript</span>, and <span class="green">Vue</span> developer. Beside them, I am also interested in <span class="green">DevOps</span>.'
+                  )
+                  .callFunction(() => {
+                    document
+                      .getElementById("contact-me-div")
+                      .style.setProperty("display", "block", "important");
+
+                    new Typewriter("#contact-title", {
+                      loop: false,
+                      delay: 25,
+                    })
+                      .typeString("Do you want to contact?")
+                      .callFunction(() => {
+                        new Typewriter("#contact", {
+                          loop: false,
+                          delay: 25,
+                        })
+                          .typeString(
+                            'You can find on me my <span class="green">e-mail</span> address or on my <span class="green">Discord account</span>.'
+                          )
+                          .start();
+                      })
+                      .start();
+                  })
+                  .start();
+              })
+              .start();
+          })
+          .start();
+      })
+      .start();
   },
 };
 </script>
