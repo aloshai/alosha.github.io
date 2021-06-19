@@ -35,27 +35,31 @@ export default {
     await this.typeWriter(
       "welcome",
       'Hello, I am <span class="quaternary">Alosha</span>!',
-      50
+      10
     );
     await this.typeWriter(
       "dev",
       '<span class="quaternary">FULL-STACK</span> Developer.',
-      25
+      10
     );
 
-    document.getElementById("who-div").style.setProperty("display", "block", "important");
-    await this.typeWriter("who-title", "Who I am?", 50);
+    document
+      .getElementById("who-div")
+      .style.setProperty("display", "block", "important");
+    await this.typeWriter("who-title", "Who I am?", 10);
     await this.typeWriter(
       "who",
-      'I am <span class="green">Mert Yılmaz</span>. I am <span class="green">17</span> years old and I am an high school student. I am still learning new stuff in programming. I am an <span class="green">.NET</span>, <span class="green">JavaScript</span>, <span class="green">TypeScript</span>, and <span class="green">Vue</span> developer. Beside them, I am also interested in <span class="green">DevOps</span>.',
-      25
+      'I am <span class="green">Mert Yılmaz</span>. I am <span class="green">17</span> years old and I am a high school student. I am still learning new stuff in programming. I am an <span class="green">.NET</span>, <span class="green">JavaScript</span>, <span class="green">TypeScript</span>, and <span class="green">Vue</span> developer. Beside them, I am also interested in <span class="green">DevOps</span>.',
+      10
     );
-    document.getElementById("contact-me-div").style.setProperty("display", "block", "important");
-    await this.typeWriter("contact-title", "Do you want to contact?");
+    document
+      .getElementById("contact-me-div")
+      .style.setProperty("display", "block", "important");
+    await this.typeWriter("contact-title", "Do you want to contact?", 10);
     await this.typeWriter(
       "contact",
       'You can find on me my <span class="green">e-mail</span> address or on my <span class="green">Discord account</span>.',
-      25
+      10
     );
   },
 };

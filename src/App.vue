@@ -3,7 +3,15 @@
     <div id="point-cursor" class="cursor"></div>
 
     <div
-      class="jumbotron d-flex justify-content-center align-items-center flex-column min-vh-100 p-4"
+      class="
+        jumbotron
+        d-flex
+        justify-content-center
+        align-items-center
+        flex-column
+        min-vh-100
+        p-4
+      "
     >
       <div class="header text-center mb-4">
         <div id="home">
@@ -23,6 +31,14 @@
             to="/skills"
             style="text-decoration: none; color: inherit"
             >Skills</router-link
+          >
+        </div>
+        <div id="skills">
+          <a
+            style="text-decoration: none; color: inherit"
+            target="__blank"
+            href="https://github.com/aloshai"
+            >Github</a
           >
         </div>
       </div>
@@ -66,7 +82,7 @@ export default {
       pointCursor.style.left = `${x}px`;
     });
 
-    this.typeWriter("author", "Made with ❤ by Alosha", 125);
+    this.typeWriter("author", "Made with ❤ by Alosha", 50);
   },
 };
 </script>
