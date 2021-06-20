@@ -76,6 +76,7 @@ export default {
     new Typewriter("#author", {
       strings: ["Made with ❤ by Alosha"],
       autoStart: true,
+      loop: true
     });
   },
 };
@@ -109,9 +110,16 @@ span {
 }
 
 ::-webkit-scrollbar {
-  overflow: hidden;
-  width: 0;
-  height: 0;
+  background-color: $primary;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $secondary; 
+  border-radius: 10px;
 }
 
 body,
@@ -150,7 +158,6 @@ html {
   position: absolute;
   pointer-events: none;
   visibility: visible;
-  transition: all 50ms ease-in-out;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   opacity: 0.4;

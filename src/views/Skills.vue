@@ -7,10 +7,5 @@
 <script>
 export default {
   name: "Skills",
-  data() {
-    return {
-      test: "asd",
-    };
-  },
 };
 </script>
