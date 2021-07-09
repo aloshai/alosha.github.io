@@ -49,7 +49,7 @@ export default {
                   delay: 25,
                 })
                   .typeString(
-                    'I am <span class="green">Mert Yılmaz</span>. I am <span class="green">17</span> years old and I am a high school student. I am still learning new stuff in programming. I am a <span class="green">.NET</span>, <span class="green">JavaScript</span>, <span class="green">TypeScript</span>, and <span class="green">Vue</span> developer. Beside them, I am also interested in <span class="green">DevOps</span>.'
+                    'I am <span class="green">Mert Yılmaz</span>. I am <span class="green">18</span> years old and I am a high school student. I am still learning new stuff in programming. I am a <span class="green">.NET</span>, <span class="green">Python</span>, <span class="green">JavaScript</span>, <span class="green">TypeScript</span>, and <span class="green">Vue</span> developer. Beside them, I am also interested in <span class="green">DevOps</span>.'
                   )
                   .callFunction(() => {
                     document
