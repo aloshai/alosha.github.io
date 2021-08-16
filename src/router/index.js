@@ -20,6 +20,11 @@ const routes = [
     component: () =>
       import("../views/Skills.vue"),
   },
+  {
+    path: "/valorant",
+    component: () =>
+      import("../views/Valorant.vue"),
+  },
 ];
 
 const router = new VueRouter({
